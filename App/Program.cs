@@ -31,16 +31,16 @@ namespace App
                     countUsers += 1;
                 }
 
-                if (person is Student)
+                switch (person)
                 {
-                    totalStudentSalary += person.Salary;
-                    countStudents += 1;
-                }
-
-                if (person is Teacher)
-                {
-                    totalTeacherSalary += person.Salary;
-                    countTeachers += 1;
+                    case Student _:
+                        totalStudentSalary += person.Salary;
+                        countStudents += 1;
+                        break;
+                    case Teacher _:
+                        totalTeacherSalary += person.Salary;
+                        countTeachers += 1;
+                        break;
                 }
             }
             
